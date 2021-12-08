@@ -1,0 +1,142 @@
+<dmn:definitions xmlns:dmn="http://www.omg.org/spec/DMN/20180521/MODEL/" xmlns="https://kiegroup.org/dmn/_AD8151A0-F62B-4C0C-8E6F-A2F1FAD484A7" xmlns:feel="http://www.omg.org/spec/DMN/20180521/FEEL/" xmlns:kie="http://www.drools.org/kie/dmn/1.2" xmlns:dmndi="http://www.omg.org/spec/DMN/20180521/DMNDI/" xmlns:di="http://www.omg.org/spec/DMN/20180521/DI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:included1="https://kiegroup.org/dmn/_65D44486-F4FD-4D8F-AA72-341199A1C027" id="_E7308DBE-0092-4856-BA30-A30A71EDE139" name="can legally drink" typeLanguage="http://www.omg.org/spec/DMN/20180521/FEEL/" namespace="https://kiegroup.org/dmn/_AD8151A0-F62B-4C0C-8E6F-A2F1FAD484A7">
+  <dmn:extensionElements/>
+  <dmn:import id="_C93389FA-0207-42C8-A3AF-BBC678E7DEC8" name="Legal Adulthood" namespace="https://kiegroup.org/dmn/_65D44486-F4FD-4D8F-AA72-341199A1C027" locationURI="Is Legally Adult.dmn" importType="http://www.omg.org/spec/DMN/20180521/MODEL/"/>
+  <dmn:inputData id="_FA0AFD75-BBF3-485B-89B0-AE39C8C50A6D" name="Person">
+    <dmn:extensionElements/>
+    <dmn:variable id="_BBA5ECA1-BCF2-46DB-96B1-1661DD279E66" name="Person" typeRef="Legal Adulthood.Person"/>
+  </dmn:inputData>
+  <dmn:decision id="_39198B91-AD3A-4418-9E73-5DF11D88C68A" name="Can legally drink">
+    <dmn:extensionElements/>
+    <dmn:variable id="_46A36767-B7E8-4F48-AC4C-F770E0EAC98D" name="Can legally drink" typeRef="boolean"/>
+    <dmn:informationRequirement id="_CB359FA4-9021-489C-B881-0706282A70A3">
+      <dmn:requiredInput href="#_FA0AFD75-BBF3-485B-89B0-AE39C8C50A6D"/>
+    </dmn:informationRequirement>
+    <dmn:informationRequirement id="_C4D7B017-12BB-42D8-B7B4-3714E15A0542">
+      <dmn:requiredInput href="#_FF6BEBA2-3CB2-40CF-900B-C387044EFDE3"/>
+    </dmn:informationRequirement>
+    <dmn:decisionTable id="_05DE57B4-D2C0-46FA-B427-70E9C97128E2" hitPolicy="UNIQUE" preferredOrientation="Rule-as-Row">
+      <dmn:input id="_9BC46C2E-A027-4E8B-A1AA-0E8240039715">
+        <dmn:inputExpression id="_DBD4C431-2E42-4E1A-A7D4-9764CB6B8EDF" typeRef="string">
+          <dmn:text>Country</dmn:text>
+        </dmn:inputExpression>
+      </dmn:input>
+      <dmn:input id="_BF7EF6E9-4D63-4886-9E9C-99FEF85A9ECB">
+        <dmn:inputExpression id="_7EC2A505-D5C0-4F31-8A5B-7A5FEC8B0B93" typeRef="number">
+          <dmn:text>Person.Legal Adulthood.age</dmn:text>
+        </dmn:inputExpression>
+      </dmn:input>
+      <dmn:output id="_6601E8EA-26A8-434D-9090-F624D5E14D92"/>
+      <dmn:annotation name="annotation-1"/>
+      <dmn:rule id="_A9B41123-F68A-4366-A0EB-2D5A6A1DA042">
+        <dmn:inputEntry id="_CCE48373-6874-4961-8E8C-78F8CABFBF67">
+          <dmn:text>"US"</dmn:text>
+        </dmn:inputEntry>
+        <dmn:inputEntry id="_ECC049F4-5BB8-4C80-BCFD-B07FB241647F">
+          <dmn:text>&gt;=21</dmn:text>
+        </dmn:inputEntry>
+        <dmn:outputEntry id="_201BA88B-8E35-4EEA-B3E7-3F2632D1A545">
+          <dmn:text>true</dmn:text>
+        </dmn:outputEntry>
+        <dmn:annotationEntry>
+          <dmn:text/>
+        </dmn:annotationEntry>
+      </dmn:rule>
+      <dmn:rule id="_4AAB1A0F-5EDE-45F0-8F43-4474D78B40B7">
+        <dmn:inputEntry id="_E4E83EE1-C18A-419E-B6EA-518749E26A26">
+          <dmn:text>"US"</dmn:text>
+        </dmn:inputEntry>
+        <dmn:inputEntry id="_94B44ED9-DDD4-4967-8475-DCD0E55622B6">
+          <dmn:text>&lt;21</dmn:text>
+        </dmn:inputEntry>
+        <dmn:outputEntry id="_33174864-52C0-470D-B7F8-755F0F41225F">
+          <dmn:text>false</dmn:text>
+        </dmn:outputEntry>
+        <dmn:annotationEntry>
+          <dmn:text/>
+        </dmn:annotationEntry>
+      </dmn:rule>
+      <dmn:rule id="_BEDB9E02-1A45-4F12-8F0F-4C68D10B384A">
+        <dmn:inputEntry id="_54D67DB8-3E43-43F4-87D2-ED67B2107848">
+          <dmn:text>"Mexico"</dmn:text>
+        </dmn:inputEntry>
+        <dmn:inputEntry id="_18612AEB-3140-4C38-B5D2-54C545D95A5A">
+          <dmn:text>&gt;=18</dmn:text>
+        </dmn:inputEntry>
+        <dmn:outputEntry id="_95984EDD-802D-484D-A1CC-039BF489FA08">
+          <dmn:text>true</dmn:text>
+        </dmn:outputEntry>
+        <dmn:annotationEntry>
+          <dmn:text/>
+        </dmn:annotationEntry>
+      </dmn:rule>
+      <dmn:rule id="_E3C88A57-DD23-4AC6-856B-DBB2F01A3CF1">
+        <dmn:inputEntry id="_C112C1E5-6F78-4B45-8C59-5B4BAADC001E">
+          <dmn:text>"Mexico"</dmn:text>
+        </dmn:inputEntry>
+        <dmn:inputEntry id="_AFA79BFE-5295-447D-BB42-0AF5930DC104">
+          <dmn:text>&lt;18</dmn:text>
+        </dmn:inputEntry>
+        <dmn:outputEntry id="_C13BCC3C-B627-407D-866E-DAB9B678B47C">
+          <dmn:text>false</dmn:text>
+        </dmn:outputEntry>
+        <dmn:annotationEntry>
+          <dmn:text/>
+        </dmn:annotationEntry>
+      </dmn:rule>
+    </dmn:decisionTable>
+  </dmn:decision>
+  <dmn:inputData id="_FF6BEBA2-3CB2-40CF-900B-C387044EFDE3" name="Country">
+    <dmn:extensionElements/>
+    <dmn:variable id="_27C03B4A-D7EB-4FCD-B13B-B2600D0670A2" name="Country" typeRef="string"/>
+  </dmn:inputData>
+  <dmndi:DMNDI>
+    <dmndi:DMNDiagram id="_E482DFCD-4CDA-40A9-939E-1BF68B2148E1" name="DRG">
+      <di:extension>
+        <kie:ComponentsWidthsExtension>
+          <kie:ComponentWidths dmnElementRef="_05DE57B4-D2C0-46FA-B427-70E9C97128E2">
+            <kie:width>50</kie:width>
+            <kie:width>100</kie:width>
+            <kie:width>246</kie:width>
+            <kie:width>188</kie:width>
+            <kie:width>200</kie:width>
+          </kie:ComponentWidths>
+        </kie:ComponentsWidthsExtension>
+      </di:extension>
+      <dmndi:DMNShape id="dmnshape-drg-_FA0AFD75-BBF3-485B-89B0-AE39C8C50A6D" dmnElementRef="_FA0AFD75-BBF3-485B-89B0-AE39C8C50A6D" isCollapsed="false">
+        <dmndi:DMNStyle>
+          <dmndi:FillColor red="255" green="255" blue="255"/>
+          <dmndi:StrokeColor red="0" green="0" blue="0"/>
+          <dmndi:FontColor red="0" green="0" blue="0"/>
+        </dmndi:DMNStyle>
+        <dc:Bounds x="328" y="201" width="100" height="50"/>
+        <dmndi:DMNLabel/>
+      </dmndi:DMNShape>
+      <dmndi:DMNShape id="dmnshape-drg-_39198B91-AD3A-4418-9E73-5DF11D88C68A" dmnElementRef="_39198B91-AD3A-4418-9E73-5DF11D88C68A" isCollapsed="false">
+        <dmndi:DMNStyle>
+          <dmndi:FillColor red="255" green="255" blue="255"/>
+          <dmndi:StrokeColor red="0" green="0" blue="0"/>
+          <dmndi:FontColor red="0" green="0" blue="0"/>
+        </dmndi:DMNStyle>
+        <dc:Bounds x="328" y="71" width="100" height="50"/>
+        <dmndi:DMNLabel/>
+      </dmndi:DMNShape>
+      <dmndi:DMNShape id="dmnshape-drg-_FF6BEBA2-3CB2-40CF-900B-C387044EFDE3" dmnElementRef="_FF6BEBA2-3CB2-40CF-900B-C387044EFDE3" isCollapsed="false">
+        <dmndi:DMNStyle>
+          <dmndi:FillColor red="255" green="255" blue="255"/>
+          <dmndi:StrokeColor red="0" green="0" blue="0"/>
+          <dmndi:FontColor red="0" green="0" blue="0"/>
+        </dmndi:DMNStyle>
+        <dc:Bounds x="474" y="201" width="100" height="50"/>
+        <dmndi:DMNLabel/>
+      </dmndi:DMNShape>
+      <dmndi:DMNEdge id="dmnedge-drg-_CB359FA4-9021-489C-B881-0706282A70A3-AUTO-SOURCE-AUTO-TARGET" dmnElementRef="_CB359FA4-9021-489C-B881-0706282A70A3">
+        <di:waypoint x="378" y="201"/>
+        <di:waypoint x="378" y="121"/>
+      </dmndi:DMNEdge>
+      <dmndi:DMNEdge id="dmnedge-drg-_C4D7B017-12BB-42D8-B7B4-3714E15A0542-AUTO-TARGET" dmnElementRef="_C4D7B017-12BB-42D8-B7B4-3714E15A0542">
+        <di:waypoint x="524" y="226"/>
+        <di:waypoint x="378" y="121"/>
+      </dmndi:DMNEdge>
+    </dmndi:DMNDiagram>
+  </dmndi:DMNDI>
+</dmn:definitions>
