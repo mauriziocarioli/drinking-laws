@@ -1,0 +1,11 @@
+<dmn:definitions xmlns:dmn="http://www.omg.org/spec/DMN/20180521/MODEL/" xmlns="https://kiegroup.org/dmn/_AD8151A0-F62B-4C0C-8E6F-A2F1FAD484A7" xmlns:feel="http://www.omg.org/spec/DMN/20180521/FEEL/" xmlns:kie="http://www.drools.org/kie/dmn/1.2" xmlns:dmndi="http://www.omg.org/spec/DMN/20180521/DMNDI/" xmlns:di="http://www.omg.org/spec/DMN/20180521/DI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:included1="https://kiegroup.org/dmn/_65D44486-F4FD-4D8F-AA72-341199A1C027" id="_E7308DBE-0092-4856-BA30-A30A71EDE139" name="Untitled" typeLanguage="http://www.omg.org/spec/DMN/20180521/FEEL/" namespace="https://kiegroup.org/dmn/_AD8151A0-F62B-4C0C-8E6F-A2F1FAD484A7">
+  <dmn:extensionElements/>
+  <dmn:import id="_C93389FA-0207-42C8-A3AF-BBC678E7DEC8" name="Legal Adulthood" namespace="https://kiegroup.org/dmn/_65D44486-F4FD-4D8F-AA72-341199A1C027" locationURI="Is Legally Adult.dmn" importType="http://www.omg.org/spec/DMN/20180521/MODEL/"/>
+  <dmndi:DMNDI>
+    <dmndi:DMNDiagram id="_E482DFCD-4CDA-40A9-939E-1BF68B2148E1" name="DRG">
+      <di:extension>
+        <kie:ComponentsWidthsExtension/>
+      </di:extension>
+    </dmndi:DMNDiagram>
+  </dmndi:DMNDI>
+</dmn:definitions>
